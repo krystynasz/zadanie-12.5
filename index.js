@@ -9,9 +9,8 @@ function getQuote() {
             return resp.json();
         })
         .then(createTweet);
+    console.log(resp.json());
 }
-
-
 
 function createTweet(input) {
     var data = input[0];
