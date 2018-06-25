@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 body {
     background-color: #00c7e8;
     color: white;
     margin: 0 auto;
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Inconsolata', monospace;
 }
+
 button {
     background: transparent;
     border: 3px solid white;
