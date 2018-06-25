@@ -39,11 +39,15 @@ function createTweet(input) {
 }
 
 
-document.addEventListener('DOMContentLoaded', function(event) {
+/*document.addEventListener('DOMContentLoaded', function(event) {
     
     console.log("DOM fully loaded and parsed");
-   // getQuote();
-   // document.querySelector('.trigger').addEventListener('click', function() {
-   //     getQuote();
-   // });
-});
+   getQuote();
+   document.querySelector('.trigger').addEventListener('click', function() {
+        getQuote();
+    });
+});*/
+
+ document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+  });
