@@ -24,6 +24,7 @@ h1 {
     margin: 0px auto;
     max-width: 500px;
     display: flex;
+    flex-wrap: wrap;
    align-items: center;
     max-height: 300px;
 }
