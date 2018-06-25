@@ -39,7 +39,7 @@ function createTweet(input) {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(event) {
     
     console.log("DOM fully loaded and parsed");
    // getQuote();
