@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log("DOM fully loaded and parsed");
    // getQuote();
-    document.querySelector('.trigger').addEventListener('click', function() {
-        getQuote();
-    });
+   // document.querySelector('.trigger').addEventListener('click', function() {
+   //     getQuote();
+   // });
 });
