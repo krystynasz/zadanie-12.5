@@ -40,8 +40,9 @@ function createTweet(input) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    getQuote();
+    
     console.log("DOM fully loaded and parsed");
+    getQuote();
     document.querySelector('.trigger').addEventListener('click', function() {
         getQuote();
     });
