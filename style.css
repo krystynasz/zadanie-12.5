@@ -28,6 +28,7 @@ h1 {
     max-width: 500px;
     max-height: 300px;
     text-align: center;
+    font-family: 'Inconsolata', monospace;
 }
 .quote {
     display: block;
