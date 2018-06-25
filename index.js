@@ -41,7 +41,7 @@ function createTweet(input) {
 
 document.addEventListener('DOMContentLoaded', function() {
     getQuote();
-    alert("choose quote");
+    console.log("DOM fully loaded and parsed");
     document.querySelector('.trigger').addEventListener('click', function() {
         getQuote();
     });
