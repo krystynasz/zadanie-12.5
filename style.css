@@ -21,7 +21,7 @@ h1 {
     text-align: center;
 }
 .box {
-    margin: 200px auto;
+    margin: 0px auto;
     max-width: 500px;
     display: flex;
    align-items: center;
