@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
    getQuote();
    document.querySelector('.trigger').addEventListener('click', function() {
         getQuote();
+       console.log('You clicked');
     });
 });
 
