@@ -1,49 +1,52 @@
-var prefix = "https://cors-anywhere.herokuapp.com/";
+'use strict';
+(function () {
 
-var tweetLink = "https://twitter.com/intent/tweet?text=";
-var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+    var prefix = "https://cors-anywhere.herokuapp.com/";
 
-function getQuote() {
-    fetch(prefix + quoteUrl, { cache: "no-store" })
-        .then(function(resp) {
-            return resp.json();
-        })
-        .then(createTweet);
-}
+    var tweetLink = "https://twitter.com/intent/tweet?text=";
+    var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
 
-function createTweet(input) {
-    var data = input[0];
-
-    var dataElement = document.createElement('div');
-    dataElement.innerHTML = data.content;
-    var quoteText = dataElement.innerText.trim();
-    var quoteAuthor = data.title;
-
-    if (!quoteAuthor.length) {
-        quoteAuthor = "Unknown author";
+    function getQuote() {
+        fetch(prefix + quoteUrl, { cache: "no-store" })
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(createTweet);
     }
 
-    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
+    function createTweet(input) {
+        var data = input[0];
 
-    if (tweetText.length > 140) {
-        getQuote();
-    } else {
-        var tweet = tweetLink + encodeURIComponent(tweetText);
-        document.querySelector('.quote').innerText = quoteText;
-        document.querySelector('.author').innerText = "Author: " + quoteAuthor;
-        document.querySelector('.tweet').setAttribute('href', tweet);
+        var dataElement = document.createElement('div');
+        dataElement.innerHTML = data.content;
+        var quoteText = dataElement.innerText.trim();
+        var quoteAuthor = data.title;
+
+        if (!quoteAuthor.length) {
+            quoteAuthor = "Unknown author";
+        }
+
+        var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
+
+        if (tweetText.length > 140) {
+            getQuote();
+        } else {
+            var tweet = tweetLink + encodeURIComponent(tweetText);
+            document.querySelector('.quote').innerText = quoteText;
+            document.querySelector('.author').innerText = "Author: " + quoteAuthor;
+            document.querySelector('.tweet').setAttribute('href', tweet);
+        }
+
     }
 
-}
 
+    document.addEventListener('DOMContentLoaded', function (event) {
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    
-    console.log("DOM fully loaded and parsed");
-   getQuote();
-   document.querySelector('.trigger').addEventListener('click', function() {
+        console.log("DOM fully loaded and parsed");
         getQuote();
-       console.log('You clicked');
+        document.querySelector('.trigger').addEventListener('click', function () {
+            getQuote();
+            console.log('You clicked');
+        });
     });
-});
-
+})();
